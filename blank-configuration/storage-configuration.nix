@@ -29,6 +29,6 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-  }
+  };
 }
 
