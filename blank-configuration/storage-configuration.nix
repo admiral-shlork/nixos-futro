@@ -5,8 +5,7 @@
     initrd.availableKernelModules = [ "ahci" "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
     initrd.kernelModules = [ "dm-snapshot" ];
     kernelModules = [ "kvm-intel" ];
-    kernelPackages = [ ];
-    kernelParams = [ ];
+    kernelPackages = [ ];kernelParams = [ ];
     extraModulePackages = [ ];
     loader = {
       systemd-boot.enable = true;
