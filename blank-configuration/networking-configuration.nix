@@ -13,7 +13,7 @@
   #     prefixLength = 64;
   #   }];
     ipv4.addresses = [{
-      address = "10.0.0.42";
+      address = "10.0.0.43";
       prefixLength = 24;
     }];
   };
