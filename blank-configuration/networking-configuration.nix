@@ -24,6 +24,6 @@
     # defaultGateway6 = {
     #   address = "fe80::1";
     #   interface = "ens3";
-    };
+    # };
   };
 }
