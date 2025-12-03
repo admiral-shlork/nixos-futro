@@ -19,7 +19,7 @@
     };
     defaultGateway = {
       address = "10.0.0.1";
-      interface = "ens3";
+      interface = "eno1";
     };
     # defaultGateway6 = {
     #   address = "fe80::1";
