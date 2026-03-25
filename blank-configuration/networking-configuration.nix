@@ -5,7 +5,7 @@
     hostName = "futro";
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 3000 80 ];
+    firewall.allowedTCPPorts = [ 3000 80 88 ];
     firewall.allowedUDPPorts = [ 53 ];
     interfaces.eno1 = {
     #   ipv6.addresses = [{
