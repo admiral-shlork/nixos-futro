@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     adguardhome
     git
+    btop
     home-manager
     htop
     nh
