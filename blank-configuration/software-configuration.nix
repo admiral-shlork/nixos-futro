@@ -2,18 +2,19 @@
 
 {
   services = {
-    xserver = {
+    adguardhome = {
       enable = true;
+      host = "0.0.0.0";
+      port = 3000;
+    };
+    openssh.enable = true;
+    xserver = {
+      enable = false;
       xkb = {
         layout = "pl";
         variant = "";
       };
     };
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    udev.packages = with pkgs; [ gnome-settings-daemon ];
-    fprintd.enable = true;
-    power-profiles-daemon.enable = true;
     prometheus.exporters.node = {
       enable = true;
       port = 9000;
