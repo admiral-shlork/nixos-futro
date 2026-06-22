@@ -35,8 +35,7 @@
     isNormalUser = true;
     description = "whatever";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [ ];
   };
 
   # This value determines the NixOS release from which the default
