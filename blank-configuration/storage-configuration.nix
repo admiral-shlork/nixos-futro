@@ -2,8 +2,11 @@
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    initrd.kernelModules = [ "dm-snapshot" ];
+    initrd = {
+      availableKernelModules = [ "ahci" "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ "dm-snapshot" ];
+      systemd.enable = true;
+    };
     kernelParams = [ "fbcon=rotate:3"];
     kernelModules = [ "kvm-intel" ];
     loader = {
@@ -17,14 +20,15 @@
   #     size = 64 * 1024;
   #   }];
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
-  
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/root";
+    "/" = {
+      device = "/dev/disk/by-label/root";
       fsType = "ext4";
     };
+  };
 }

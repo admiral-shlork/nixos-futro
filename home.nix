@@ -8,11 +8,7 @@
     username = "whatever";
     homeDirectory = "/home/whatever";
     stateVersion = "24.11";
-    packages = with pkgs; [
-      docker
-      python3
-      python311Packages.pip
-    ];
+    packages = with pkgs; [ ];
   };
 
   programs.bash = {

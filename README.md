@@ -9,15 +9,15 @@ See `fileSystems` config for the host and create necessary partitions. For exist
 
 1. Boot NixOS from a Live USB
 
-2. Enter shell with git and vim:
+2. Enter shell with git and vscodium:
 
 ```bash
-nix --extra-experimental-features "nix-command flakes" shell nixpkgs#git nixpkgs#vim
+nix --extra-experimental-features "nix-command flakes" shell nixpkgs#git nixpkgs#vscodium
 ```
 
 3. Mount all required partitions under `/mnt`.
 
-- On new hardware, consider  running `nixos-generate-config` and examine the `configuration.nix` and `hardware-configuration.nix` to see if any declarations are required to be added to the configuration.
+- On new hardware, consider running `nixos-generate-config` and examine the `configuration.nix` and `hardware-configuration.nix` to see if any declarations are required to be added to the configuration.
 
 4. Clone the repo with the configuration:
 
@@ -83,18 +83,18 @@ cryptsetup luksOpen /dev/sda1 some_luks_container
 ```
 
 - create an LVM Physical Volume and add a Volume Group to it
-``` bash
+```bash
 pvcreate /dev/mapper/some_luks_container
 ```
-``` bash
+```bash
 vgcreate some_volume_group /dev/mapper/some_luks_container
 ```
 
 - create LVM Logical Volume
-``` bash
+```bash
 lvcreate -n some_logical_volume -L 42G some_volume_group
 ```
-``` bash
+```bash
 lvcreate -n some_logical_volume -l 100%FREE some_volume_group
 ```
 
